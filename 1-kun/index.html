@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Praktika</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                width: 100%;
+                text-align: center;
+            }
+
+            .closed,
+            .opened {
+                font-size: 150px;
+                padding: 20px;
+            }
+            .disable {
+                display: none;
+            }
+            p {
+                font-size: 26px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="closed active">🙈</div>
+            <div class="opened disable">🐵</div>
+        </div>
+
+        <script>
+            // function yop() {
+            //     let open = document.querySelector(".opened");
+            //     let close = document.querySelector(".closed");
+            //     open.classList.remove("active");
+            //     open.classList.add("disable");
+            //     close.classList.remove("disable");
+            //     close.classList.add("active");
+            // }
+
+            // function och() {
+            //     let open = document.querySelector(".opened");
+            //     let close = document.querySelector(".closed");
+            //     open.classList.remove("disable");
+            //     open.classList.add("active");
+            //     close.classList.remove("active");
+            //     close.classList.add("disable");
+            // }
+
+            let maymun = document.querySelector(".closed");
+            let maymunoch = document.querySelector(".opened");
+            let content = document.querySelector(".content");
+
+            let p = document.createElement("p");
+            p.textContent = "Aji";
+            content.appendChild(p);
+
+            maymun.addEventListener("click", () => {
+                if (maymunoch.classList.contains("opened")) {
+                    maymunoch.classList.remove("disable");
+                    maymunoch.classList.add("active");
+                    maymun.classList.remove("active");
+                    maymun.classList.add("disable");
+                    p.textContent = "Kuku";
+                }
+            });
+
+            maymunoch.addEventListener("click", () => {
+                if (maymun.classList.contains("closed")) {
+                    maymunoch.classList.remove("active");
+                    maymunoch.classList.add("disable");
+                    maymun.classList.remove("disable");
+                    maymun.classList.add("active");
+                    p.textContent = "Aji";
+                }
+            });
+        </script>
+    </body>
+</html>
