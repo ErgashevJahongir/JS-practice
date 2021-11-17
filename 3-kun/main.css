@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(102, 49, 49);
+    position: relative;
+    border-radius: 30px 30px 40px 40px;
+}
+
+form input {
+    position: absolute;
+    height: 45px;
+    width: 65%;
+    top: 25px;
+    caret-color: white;
+    left: 36px;
+    border-radius: 7px;
+    outline: 0;
+    font-size: 42px;
+    text-align: center;
+}
+
+p {
+    position: absolute;
+    top: 38%;
+    left: 13%;
+    color: #fff;
+}
+
+.sanoq {
+    position: absolute;
+    top: 60%;
+    left: 39%;
+    background-color: #333;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.qayta {
+    position: absolute;
+    top: 48%;
+    left: 19%;
+    background-color: #333;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
