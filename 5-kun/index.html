@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css"
+        />
+        <title>Musiqa player</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <h1>Musiqa Player</h1>
+
+        <div class="musiqa-container">
+            <div class="musiqa-title" id="musiqa-title">
+                <h4 class="title" id="title">Ulalle</h4>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+
+            <audio src="audio/nashid-1.mp3" class="audio" id="audio"></audio>
+
+            <div class="img-container" id="img-container">
+                <img src="img/nashid-1.jfif" id="cover" alt="nashida" />
+            </div>
+
+            <div class="navigation">
+                <button id="oldingi" class="action-btn" type="button">
+                    <i class="bi bi-skip-backward-fill"></i>
+                </button>
+                <button
+                    id="play"
+                    class="action-btn action-btn-big"
+                    type="button"
+                >
+                    <i class="bi bi-play-fill"></i>
+                </button>
+                <button id="keyingi" class="action-btn" type="button">
+                    <i class="bi bi-skip-forward-fill"></i>
+                </button>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
