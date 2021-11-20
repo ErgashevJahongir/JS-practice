@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yangi yil</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 130vh;
+                width: 100%;
+                background-color: #181818;
+            }
+            h1 {
+                font-size: 90px;
+                font-family: sans-serif;
+                color: #f00;
+                letter-spacing: 2px;
+            }
+            h2 {
+                margin-top: 10px;
+                text-align: center;
+                font-size: 60px;
+                color: #fff;
+                letter-spacing: 1px;
+            }
+            h2:nth-child(2) {
+                margin-top: 100px;
+                color: #0ff;
+            }
+            h2:nth-child(3) {
+                color: #0f0;
+            }
+            h2:nth-child(4) {
+                color: #ff0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="yangiYil"></div>
+
+        <script>
+            const yangiYil = document.querySelector(".yangiYil");
+            const oylar = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let h1 = document.createElement("h1");
+            let h2sekund = document.createElement("h2");
+            let h2minut = document.createElement("h2");
+            let h2soat = document.createElement("h2");
+            window.onload = function () {
+                window.setInterval(function () {
+                    let sana = new Date();
+                    let oy = sana.getMonth();
+                    let kun = sana.getDate();
+                    let soat = sana.getHours();
+                    let minut = sana.getMinutes();
+                    let sekund = sana.getSeconds();
+
+                    let qolganKun = oylar[oy] - kun;
+                    let qolgansoat = 23 - soat;
+                    let qolganminut = 59 - minut;
+                    let qolgansekund = 59 - sekund;
+                    for (let i = oy + 1; i < 12; i++) {
+                        qolganKun += oylar[i];
+                    }
+                    h1.textContent =
+                        qolganKun +
+                        "d" +
+                        " : " +
+                        qolgansoat +
+                        "h" +
+                        " : " +
+                        qolganminut +
+                        "m" +
+                        " : " +
+                        qolgansekund +
+                        "s";
+
+                    h2sekund.textContent =
+                        qolganKun * 86400 +
+                        qolgansoat * 3600 +
+                        (qolganminut + 1) * 60 -
+                        sekund +
+                        " sekund";
+
+                    h2minut.textContent =
+                        qolganKun * 1440 +
+                        qolgansoat * 60 +
+                        qolganminut +
+                        " minut";
+
+                    h2soat.textContent = qolganKun * 24 + qolgansoat + " soat";
+
+                    yangiYil.appendChild(h1);
+                    yangiYil.appendChild(h2soat);
+                    yangiYil.appendChild(h2minut);
+                    yangiYil.appendChild(h2sekund);
+                }, 1000);
+            };
+        </script>
+    </body>
+</html>
