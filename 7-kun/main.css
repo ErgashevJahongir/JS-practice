@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Popins", sans-serif;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    position: relative;
+    transition: background 0.5s;
+}
+
+section.dark {
+    background-color: #24292d;
+}
+
+section .card {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    background-color: #fff;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.025);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s;
+}
+
+section.dark .card {
+    background-color: #323840;
+}
+
+section .card .content,
+section .card .imgText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section .card .imgText .imgBox {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+section .card .imgText .imgBox img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+section .card .imgText h3 {
+    font-weight: 500;
+    font-size: 1.4em;
+    line-height: 1.2em;
+    text-align: center;
+    color: #2fa1ff;
+    margin-bottom: 15px;
+}
+
+section .card .imgText h3 span {
+    font-weight: 400;
+    color: #777;
+    font-size: 0.75em;
+}
+
+section.dark .card .imgText h3 span {
+    color: #ccc;
+}
+section .card ul {
+    display: flex;
+}
+
+section .card ul li {
+    list-style-type: none;
+}
+
+section .card ul li a {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #e9f5ff;
+    color: #2fa1ff;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+section.dark .card ul li a {
+    background-color: #404852;
+}
+
+section .card ul li a .bi {
+    position: relative;
+    z-index: 100;
+}
+
+section .card ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2fa1ff;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: scale(0);
+}
+
+section .card ul li a:hover {
+    color: #fff;
+}
+
+section .card ul li a:hover:before {
+    transform: scale(1);
+}
+
+.toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e9f5ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.dark .toggle {
+    background-color: #404852;
+}
+
+.toggle i {
+    color: #2fa1ff;
+}
+
+section.dark .toggle i {
+    color: #fff;
+}
